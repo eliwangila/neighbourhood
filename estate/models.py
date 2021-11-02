@@ -1,15 +1,15 @@
-# import sys
-# from django.db import models
-# from cloudinary.models import CloudinaryField
-# from django.contrib.auth.models import User
-# from django.db.models.fields import TextField
-# from django.urls import reverse
-# # Create your models here.
+import sys
+from django.db import models
+from cloudinary.models import CloudinaryField
+from django.contrib.auth.models import User
+from django.db.models.fields import TextField
+from django.urls import reverse
+# Create your models here.
 
-# class Neighborhood(models.Model):
-#     neighborhood_name = models.CharField(max_length=100)
-#     location = models.CharField(max_length=100,null=True)
-#     occupant_count = models.IntegerField(null=True)
+class Neighborhood(models.Model):
+    neighborhood_name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100,null=True)
+    occupant_count = models.IntegerField(null=True)
     
 #     def save_neighborhood(self):
 #         self.save()
