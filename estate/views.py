@@ -26,19 +26,19 @@ class BusinessCreateView(LoginRequiredMixin,CreateView):
         form.instance.business_owner = self.request.user
         return super().form_valid(form)
 
-# class BusinessUpdateView(LoginRequiredMixin,UpdateView,UserPassesTestMixin):
-#     model=Business
-#     fields = ['name','email','business_image','location']
+class BusinessUpdateView(LoginRequiredMixin,UpdateView,UserPassesTestMixin):
+    model=Business
+    fields = ['name','email','business_image','location']
 
-#     def form_valid(self):
-#         forms.instance.business_owner =self.request.user
-#         return super().form_valid()
+    def form_valid(self):
+        forms.instance.business_owner =self.request.user
+        return super().form_valid()
 
-#     def test_func(self):
-#         business = self.get_object()
-#         if self.request.user == business.business_owner:
-#             return True
-#         return False
+    def test_func(self):
+        business = self.get_object()
+        if self.request.user == business.business_owner:
+            return True
+        return False
     
 # class BusinessDeleteView(LoginRequiredMixin,DeleteView):
 #     model=Business
