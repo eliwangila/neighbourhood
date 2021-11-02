@@ -51,11 +51,11 @@ class BusinessDeleteView(LoginRequiredMixin,DeleteView):
             return True
         return False
 
-# class PostListView(ListView):
-#     model=Post
-#     template_name='engine/post_list.html'
-#     context_object_name='posts'
-#     ordering='-date_posted'
+class PostListView(ListView):
+    model=Post
+    template_name='engine/post_list.html'
+    context_object_name='posts'
+    ordering='-date_posted'
 
 # class PostCreateView(LoginRequiredMixin,CreateView,UserPassesTestMixin):
 #     model = Post
