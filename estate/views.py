@@ -10,7 +10,7 @@ from .models import Post,Business
 from .form import BusinessForms,PostForms
 
 
-# # Create your views here.
+# Create your views here.
 class BusinessListView(ListView):
     model = Business
     template_name= 'estate/home.html'
@@ -112,4 +112,4 @@ def search_request(request):
 
     else:
         message="You haven't searched for any item"
-        return render(request,'estate/search.html',{"message":message})   
+        return render(request,'estate/search.html',{"message":message}) 

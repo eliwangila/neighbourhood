@@ -1,5 +1,4 @@
-from .models import Post,Business
-from django.forms import fields
+from .models import Business
 from django import forms
 
 class BusinessForms(forms.ModelForm):
