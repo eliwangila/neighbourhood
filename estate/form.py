@@ -7,7 +7,6 @@ class BusinessForms(forms.ModelForm):
     class Meta:
         model=Business
         fields= ['name','email','business_image','location']
-
-class PostForms(forms.ModelForm):
-    class Post:
-        fields=['post']
+# class PostForms(forms.ModelForm):
+#     class Post:
+#         fields=['post']
