@@ -71,45 +71,45 @@ class PostCreateView(LoginRequiredMixin,CreateView,UserPassesTestMixin):
             return True
         return False
     
-# class PostDeleteView(LoginRequiredMixin,DeleteView,UserPassesTestMixin):
-#     model=Post
-#     success_url='/'
+class PostDeleteView(LoginRequiredMixin,DeleteView,UserPassesTestMixin):
+    model=Post
+    success_url='/'
     
-#     def test_func(self):
-#         post = self.get_object()
+    def test_func(self):
+        post = self.get_object()
         
-#         if self.request.user ==post.author:
-#             return True
-#         return False
+        if self.request.user ==post.author:
+            return True
+        return False
     
-# class PostDetailView(DetailView):
-#     model=Post
+class PostDetailView(DetailView):
+    model=Post
 
-# class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
-#     model=Post
-#     fields = ['post']
+class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
+    model=Post
+    fields = ['post']
 
-#     def form_valid(self,form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
+    def form_valid(self,form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
         
 
-#     def test_func(self):
-#         post = self.get_object
-#         if self.request.user == post.author:
-#             return True
-#         return False
+    def test_func(self):
+        post = self.get_object
+        if self.request.user == post.author:
+            return True
+        return False
     
 
-# def search_request(request):
-#     if 'query' in request.POST and request.GET['query']: 
-#         search = request.GET.get('query')
-#         search_business= Business.search_by_title(search)
-#         messages= f'{search}'
-#         context = {"message":messages,"businesses":search_business}
+def search_request(request):
+    if 'query' in request.POST and request.GET['query']: 
+        search = request.GET.get('query')
+        search_business= Business.search_by_title(search)
+        messages= f'{search}'
+        context = {"message":messages,"businesses":search_business}
         
-#         return render(request,'estate/search.html',context)
+        return render(request,'estate/search.html',context)
 
-#     else:
-#         message="You haven't searched for any item"
-#         return render(request,'estate/search.html',{"message":message})   
+    else:
+        message="You haven't searched for any item"
+        return render(request,'estate/search.html',{"message":message})   
