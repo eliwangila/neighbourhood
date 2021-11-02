@@ -1,27 +1,27 @@
-# from django.test import TestCase
-# from .models import Neighborhood,Business
+from django.test import TestCase
+from .models import Neighborhood,Business
 
-# # Create your tests here.
+# Create your tests here.
       
    
-# class NeighbourhoodTestClass(TestCase):
-#     def setUp(self):
-#         self.new_neighbourhood = Neighborhood('Utawala','Nairobi',56)
+class NeighbourhoodTestClass(TestCase):
+    def setUp(self):
+        self.new_neighbourhood = Neighborhood('Kawangware','Nairobi',46)
 
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.new_neighbourhood, Neighborhood))
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_neighbourhood, Neighborhood))
 
-#     def test_update_neighborhood(self):
-#         self.new_neighborhood.save_hood()
-#         neighborhood_id = self.new_neighbourhood.id
-#         Neighborhood.update_hood(id, "Narok")
-#         self.assertEqual(self.neighborhood.neighborhood,"narok")
+    def test_update_neighborhood(self):
+        self.new_neighborhood.save_hood()
+        neighborhood_id = self.new_neighbourhood.id
+        Neighborhood.update_hood(id, "Eldoret")
+        self.assertEqual(self.neighborhood.neighborhood,"eldoret")
 
-#     def test_delete_neighborhood(self):
-#         self.new_neighbourhood.save_hood()
-#         self.neighborhood.delete_hood()
-#         hoods = Neighborhood.objects.all()
-#         self.assertTrue(len(hoods) == 0)
+    def test_delete_neighborhood(self):
+        self.new_neighbourhood.save_hood()
+        self.neighborhood.delete_hood()
+        hoods = Neighborhood.objects.all()
+        self.assertTrue(len(hoods) == 0)
 
 # class BusinessTestClass(TestCase):
 #     def setUp(self):
