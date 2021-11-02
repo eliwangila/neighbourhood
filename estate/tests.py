@@ -23,21 +23,21 @@ class NeighbourhoodTestClass(TestCase):
         hoods = Neighborhood.objects.all()
         self.assertTrue(len(hoods) == 0)
 
-# class BusinessTestClass(TestCase):
-#     def setUp(self):
-#         self.new_business = Business(biz_name ='CampAbilities',biz_email = 'cabilities@gmail.com', biz_description='Eat good Live good', biz_digits='0791122323')
+class BusinessTestClass(TestCase):
+    def setUp(self):
+        self.new_business = Business(biz_name ='Example',biz_email = 'example@gmail.com', biz_description='Live good life', biz_digits='0799405897')
 
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.new_business, Business))
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_business, Business))
 
-#     def test_update_business(self):
-#         self.new_business.save_business()
-#         business_id = self.new_business.id
-#         Business.update_business(id, "CAbilities")
-#         self.assertEqual(self.business.business, "CAbilities")
+    def test_update_business(self):
+        self.new_business.save_business()
+        business_id = self.new_business.id
+        Business.update_business(id, "CAbilities")
+        self.assertEqual(self.business.business, "CAbilities")
 
-#     def test_delete_business(self):
-#         self.business.save_business()
-#         self.business.delete_business()
-#         business = Business.objects.all()
-#         self.assertTrue(len(business) == 0)
+    def test_delete_business(self):
+        self.business.save_business()
+        self.business.delete_business()
+        business = Business.objects.all()
+        self.assertTrue(len(business) == 0)
