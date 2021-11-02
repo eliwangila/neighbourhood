@@ -1,30 +1,30 @@
-# from django import forms
-# from django.shortcuts import render,redirect
-# from django.http import HttpResponse,HttpResponseRedirect,Http404,JsonResponse
-# import datetime as dt
-# from django.contrib import messages
-# from django.contrib.auth.decorators import login_required
-# from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
-# from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
-# from .models import Post,Business
-# from .form import BusinessForms,PostForms
+from django import forms
+from django.shortcuts import render,redirect
+from django.http import HttpResponse,HttpResponseRedirect,Http404,JsonResponse
+import datetime as dt
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
+from .models import Post,Business
+from .form import BusinessForms,PostForms
 
 
 # # Create your views here.
-# class BusinessListView(ListView):
-#     model = Business
-#     template_name= 'estate/home.html'
-#     context_object_name = 'businesses'
+class BusinessListView(ListView):
+    model = Business
+    template_name= 'estate/home.html'
+    context_object_name = 'businesses'
     
-# class BusinessDetailView(DetailView):
-#     model=Business
-# class BusinessCreateView(LoginRequiredMixin,CreateView):
-#     model = Business
-#     fields=['name','email','business_image','location']
+class BusinessDetailView(DetailView):
+    model=Business
+class BusinessCreateView(LoginRequiredMixin,CreateView):
+    model = Business
+    fields=['name','email','business_image','location']
     
-#     def form_valid(self,form):
-#         form.instance.business_owner = self.request.user
-#         return super().form_valid(form)
+    def form_valid(self,form):
+        form.instance.business_owner = self.request.user
+        return super().form_valid(form)
 
 # class BusinessUpdateView(LoginRequiredMixin,UpdateView,UserPassesTestMixin):
 #     model=Business
