@@ -10,5 +10,6 @@ class Profile(models.Model):
     image = CloudinaryField('profile-photo',null=True, transformation=[{'width':300, 'height':300}])
     bio = models.TextField(null=True)
     neighborhood = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
+
     def __str__(self):
         return f'{self.user.username} Profile'

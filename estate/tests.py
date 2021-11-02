@@ -14,8 +14,8 @@ class NeighbourhoodTestClass(TestCase):
     def test_update_neighborhood(self):
         self.new_neighborhood.save_hood()
         neighborhood_id = self.new_neighbourhood.id
-        Neighborhood.update_hood(id, "Eldoret")
-        self.assertEqual(self.neighborhood.neighborhood,"eldoret")
+        Neighborhood.update_hood(id, "Kawamgware")
+        self.assertEqual(self.neighborhood.neighborhood,"kawamgware")
 
     def test_delete_neighborhood(self):
         self.new_neighbourhood.save_hood()
@@ -25,7 +25,7 @@ class NeighbourhoodTestClass(TestCase):
 
 class BusinessTestClass(TestCase):
     def setUp(self):
-        self.new_business = Business(biz_name ='Example',biz_email = 'example@gmail.com', biz_description='Live good life', biz_digits='0799405897')
+        self.new_business = Business(biz_name ='CampAbilities',biz_email = 'cabilities@gmail.com', biz_description='Eat good Live good', biz_digits='0799405897')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_business, Business))
