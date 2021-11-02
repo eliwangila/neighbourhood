@@ -40,16 +40,16 @@ class BusinessUpdateView(LoginRequiredMixin,UpdateView,UserPassesTestMixin):
             return True
         return False
     
-# class BusinessDeleteView(LoginRequiredMixin,DeleteView):
-#     model=Business
-#     success_url='/'
+class BusinessDeleteView(LoginRequiredMixin,DeleteView):
+    model=Business
+    success_url='/'
     
-#     def test_func(self):
-#         business=self.get_object()
+    def test_func(self):
+        business=self.get_object()
         
-#         if self.request.user==business.business_owner:
-#             return True
-#         return False
+        if self.request.user==business.business_owner:
+            return True
+        return False
 
 # class PostListView(ListView):
 #     model=Post
