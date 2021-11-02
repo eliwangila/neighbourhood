@@ -41,27 +41,27 @@ class Business(models.Model):
     business_location=models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
     location=models.CharField(max_length=225,null=True,blank=True)
 
-#     def save_business(self):
-#         self.save()
+    def save_business(self):
+        self.save()
     
-#     @classmethod
-#     def delete_business(id,cls):
-#         cls.objects.filter(id).delete()
+    @classmethod
+    def delete_business(id,cls):
+        cls.objects.filter(id).delete()
     
-#     @classmethod
-#     def update_business(cls,id,new_name):
-#         cls.objects.filter(id=id).update(new_business=new_name)
+    @classmethod
+    def update_business(cls,id,new_name):
+        cls.objects.filter(id=id).update(new_business=new_name)
     
-#     @classmethod
-#     def search_business(cls,id):
-#         business = cls.objects.filter(name__icontains = id)
-#         return business
+    @classmethod
+    def search_business(cls,id):
+        business = cls.objects.filter(name__icontains = id)
+        return business
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
     
-#     def get_absolute_url(self):
-#         return reverse('business-detail',kwargs={'pk':self.pk})
+    def get_absolute_url(self):
+        return reverse('business-detail',kwargs={'pk':self.pk})
 
 class Post(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
