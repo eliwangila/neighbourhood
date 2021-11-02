@@ -153,11 +153,11 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 # adding config
-# cloudinary.config( 
-#   cloud_name = "", 
-#   api_key = "", 
-#   api_secret = "" 
-# )
+cloudinary.config( 
+  cloud_name = "moringa123", 
+  api_key = "911816424218336", 
+  api_secret = "VTFV0CFEVFr_oqMJOhOia0nstD0" 
+)
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
