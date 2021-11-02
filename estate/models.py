@@ -33,13 +33,13 @@ class Neighborhood(models.Model):
     
     
    
-# class Business(models.Model):
-#     name=models.CharField(max_length=100)
-#     business_owner=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
-#     email=models.EmailField()
-#     business_image= CloudinaryField('business', null=True)
-#     business_location=models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
-#     location=models.CharField(max_length=225,null=True,blank=True)
+class Business(models.Model):
+    name=models.CharField(max_length=100)
+    business_owner=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    email=models.EmailField()
+    business_image= CloudinaryField('business', null=True)
+    business_location=models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
+    location=models.CharField(max_length=225,null=True,blank=True)
 
 #     def save_business(self):
 #         self.save()
