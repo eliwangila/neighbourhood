@@ -1,1 +1,0 @@
-web: gunicorn hoodproject.wsgi --log-file -
