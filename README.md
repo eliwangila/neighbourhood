@@ -1,11 +1,15 @@
  ## Neighborhood 
+ 
  # Author
 
- - Create by 
-Eli Wangila on 01/11/2021
+ - Create by **Amon Wanyonyi**
 
 # Description
-This is an application that allows users to be in the loop about everything happening in your neighborhood. From contact information of different handyman to meeting announcements or even alerts.
+It's where communities come together to greet newcomers, 
+                exchange recommendations, and read the latest local news. 
+                Where neighbors support local businesses and get updates from public agencies. 
+                Where neighbors borrow tools and sell couches. It's how to get the most out of 
+                everything nearby. Welcome, neighbor.
 
 # User stories
 The user should be able to:
@@ -37,10 +41,9 @@ The user should be able to:
 
 # License
 This project is licensed under the MIT Open Source license, (c)
-2021
+2022
 # About
 This is an application that allows you to be in the loop about everything happening in your neighborhood. From contact information of different neighbours to meeting announcements or even alerts.
 
 ## Contact information
 For queries and contribution on the project contact via
-ekirapaeli254@gmail.com
